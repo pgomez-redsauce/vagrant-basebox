@@ -2,7 +2,7 @@
 
 mkdir tmp/kickstart-dvd1
 
-sudo mount -o loop -t iso9660 isos/CentOS-6.2-x86_64-minimal.iso tmp/kickstart-dvd1
+sudo mount -o loop -t iso9660 isos/CentOS-6.2-x86_64-netinstall.iso tmp/kickstart-dvd1
 
 cp -af tmp/kickstart-dvd1 tmp/kickstart-dvd2
 cp -af config/isolinux.cfg tmp/kickstart-dvd2/isolinux/
