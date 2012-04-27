@@ -1,0 +1,34 @@
+name: vagrant-base
+summary: Base image for vagrant
+os:
+  name: centos
+  version: 6
+  password: vagrant
+hardware:
+  memory: 512
+  partitions:
+    "/":
+      size: 10
+#repos:
+#  - name: "base"
+#    mirrorlist: "http://mirrorlist.centos.org/?release=#OS_VERSION#&arch=#BASE_ARCH#&repo=os"
+#  - name: "updates"
+#    mirrorlist: "http://mirrorlist.centos.org/?release=#OS_VERSION#&arch=#BASE_ARCH#&repo=updates"
+#  - name: "epel"
+#    baseurl: "http://mirror.uv.es/mirror/fedora-epel/#OS_VERSION#/#BASE_ARCH/"
+
+packages:
+  - @core
+  #- mysql-server
+  #- php
+  #- mod_fcgid
+  #- memcached
+  #- php-pecl-memcache
+  #- php-pecl-memcached
+  #- puppet
+#post:
+#  base:
+#- "/sbin/chkconfig mysqld on"
+#- "/sbin/chkconfig httpd on"
+#- "/sbin/chkconfig memcached on"
+
