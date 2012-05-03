@@ -17,9 +17,9 @@ $DIR/bin/create-kickstart-floppy.sh $KS
 
 rm -f $DISK
 VBoxManage createhd --filename $DISK --size $DISKSIZE
-VBoxManage createvm --register --name $NAME --ostype $OSTYPE --cpus $CPUS --hwvirtex on
+VBoxManage createvm --register --name $NAME --ostype $OSTYPE 
 
-VBoxManage modifyvm $NAME --boot1 disk --boot2 dvd --boot3 none --boot4 none --memory $MEMORY
+VBoxManage modifyvm $NAME --boot1 disk --boot2 dvd --boot3 none --boot4 none --memory $MEMORY --cpus $CPUS --hwvirtex on
 
 VBoxManage storagectl $NAME --name "Floppy" --add floppy
 VBoxManage storageattach $NAME --storagectl "Floppy" --type fdd --device 0 --medium $KS
