@@ -13,7 +13,7 @@ mkdir -p $TMPDIR
 sudo mount -o loop $FILE $TMPDIR 
 cp -p $DIR/config/ks.cfg $TMPDIR/
 
-sed -i $TMPDIR/ks.cfg -e "s/@CPU@/$CPU/g; s/@VBOX@/$VBOX/g; s/@RELEASE@/$RELEASE/g; s/@EPEL@/$EPEL/g; "
+sed -i $TMPDIR/ks.cfg -e "s/@ARCH@/$ARCH/g; s/@VBOX@/$VBOX/g; s/@RELEASE@/$RELEASE/g; s/@EPEL@/$EPEL/g; "
 
 sudo umount $TMPDIR
 rmdir $TMPDIR

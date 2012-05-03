@@ -5,7 +5,7 @@ DIR=$( cd "$( dirname "$0" )" && pwd )/..
 . $DIR/config/config.sh
 
 DISK=$DIR/images/$NAME.vdi
-ISO=$DIR/isos/CentOS-$RELEASE-$CPU-$ISOTYPE.iso
+ISO=$DIR/isos/CentOS-$RELEASE-$ARCH-$ISOTYPE.iso
 ISOKS=$ISO-kickstart.iso
 KS=$DIR/images/kickstart.img
 
