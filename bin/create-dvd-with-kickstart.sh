@@ -5,11 +5,11 @@ DIR=$( cd "$( dirname "$0" )" && pwd )/..
 SOURCE=$1
 DEST=$2
 
-mkdir -p $DIR/tmp/kickstart-dvd1
+mkdir -p $DIR/tmp/kickstart-dvd1 $DIR/tmp/kickstart-dvd2
 
 sudo mount -o loop -t iso9660 $SOURCE $DIR/tmp/kickstart-dvd1
 
-cp -af $DIR/tmp/kickstart-dvd1 $DIR/tmp/kickstart-dvd2
+cp -af $DIR/tmp/kickstart-dvd1/. $DIR/tmp/kickstart-dvd2/
 cp -af config/isolinux.cfg $DIR/tmp/kickstart-dvd2/isolinux/
 
 chmod a+w $DIR/tmp/kickstart-dvd2/isolinux/isolinux.bin

@@ -1,12 +1,13 @@
 #!/bin/bash
 
 DIR=$( cd "$( dirname "$0" )" && pwd )/..
-VM=CentosBox
+
+. $DIR/config/config.sh
 
 export PATH="$PATH:/opt/vagrant/bin"
 
 #VBoxManage closemedium dvd 
 #VBoxManage closemedium floppy
 
-vagrant package --base $VM 
+vagrant package --base $NAME
 
