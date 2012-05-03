@@ -13,3 +13,23 @@ machine. This will take a while.
 
 Once this is finished you can launch the bin/create-vagrant-basebox.sh, this 
 will do the final step of packaging the virtual machine into a vagrant box.
+
+The script was just tested on:
+- Fedora 16
+- with sudo rights
+- creating a CentOS 6.2 box
+- on VirtualBox 4.1.12
+
+The kickstart file config/ks.cfg makes assumptions on the CentOS release and 
+VirtualBox version, as it installs the VirtualBoxAdditions and these have to 
+match the VirtualBox version.
+
+The vagrant box will have the default settings as recommended by the vagrant
+website:
+- hostname: vagrantup.com
+- vagrant user: vagrant password vagrant
+- root password: vagrant
+- unsecure vagrant ssh keys installed for easy "vagrant ssh"
+- puppet is installed (not Chef though)
+
+
