@@ -2,17 +2,20 @@
 
 DIR=$( cd "$( dirname "$0" )" && pwd )/..
 
-NAME=CentosTest
+NAME=CentosBox
+RELEASE=6.2
 DISK=$DIR/images/$DISK.vdi
-ISO=$DIR/isos/CentOS-6.2-x86_64-netinstall.iso
+ISO=$DIR/isos/CentOS-$RELEASE-x86_64-netinstall.iso
 ISOKS=$ISO-kickstart.iso
 KS=$DIR/images/kickstart.img
 
 DISKSIZE=20480
 MEMORY=512
 
+mkdir -p $DIR/images
 
-$DIR/bin/create-dvd-with-kickstart.sh $ISO $ISOKS
+$DIR/bin/download-centos.sh $RELEASE
+$DIR/bin/create-dvd-with-kickstart.sh $ISO $ISOKS 
 $DIR/bin/create-kickstart-floppy.sh $KS
 
 rm -f $DISK
