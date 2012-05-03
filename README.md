@@ -1,3 +1,6 @@
+vagrant-basebox
+===============
+
 This is a collection of scripts to create a minimal vagrant CentOS box.
 
 There is some configuration for the CentoS release, VM name, memory and disk 
