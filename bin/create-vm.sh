@@ -5,7 +5,7 @@ DIR=$( cd "$( dirname "$0" )" && pwd )/..
 . $DIR/config/config.sh
 
 DISK=$DIR/images/$NAME.vdi
-ISO=$DIR/isos/CentOS-$RELEASE-x86_64-$ISOTYPE.iso
+ISO=$DIR/isos/CentOS-$RELEASE-$CPU-$ISOTYPE.iso
 ISOKS=$ISO-kickstart.iso
 KS=$DIR/images/kickstart.img
 
@@ -17,7 +17,7 @@ $DIR/bin/create-kickstart-floppy.sh $KS
 
 rm -f $DISK
 VBoxManage createhd --filename $DISK --size $DISKSIZE
-VBoxManage createvm --register --name $NAME --ostype RedHat_64
+VBoxManage createvm --register --name $NAME --ostype $OSTYPE --cpus $CPUS --hwvirtex on
 
 VBoxManage modifyvm $NAME --boot1 disk --boot2 dvd --boot3 none --boot4 none --memory $MEMORY
 
