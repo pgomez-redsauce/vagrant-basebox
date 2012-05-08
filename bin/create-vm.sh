@@ -19,7 +19,15 @@ rm -f $DISK
 VBoxManage createhd --filename $DISK --size $DISKSIZE
 VBoxManage createvm --register --name $NAME --ostype $OSTYPE 
 
-VBoxManage modifyvm $NAME --boot1 disk --boot2 dvd --boot3 none --boot4 none --memory $MEMORY --cpus $CPUS --hwvirtex on
+VBoxManage modifyvm $NAME \
+	--boot1 disk \
+	--boot2 dvd \
+	--boot3 none \
+	--boot4 none \
+	--memory $MEMORY \
+	--cpus $CPUS \
+	--hwvirtex on \
+	--pae on
 
 VBoxManage storagectl $NAME --name "Floppy" --add floppy
 VBoxManage storageattach $NAME --storagectl "Floppy" --type fdd --device 0 --medium $KS
